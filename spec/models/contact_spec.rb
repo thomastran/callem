@@ -41,4 +41,14 @@ RSpec.describe Contact, :type => :model do
   describe "should have a factory" do
     it { expect(FactoryGirl.build(:contact)).to be_valid}
   end
+
+  it "should destroy associated microposts" do
+    microposts = @user.microposts.to_a
+    @user.destroy
+    expect(microposts).not_to be_empty
+    microposts.each do |micropost|
+      expect(Micropost.where(id: micropost.id)).to be_empty
+    end
+  end
+
 end
