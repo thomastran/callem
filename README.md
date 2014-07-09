@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/ThomasTran/callem.png)](https://api.travis-ci.org/ThomasTran/callem.png)
+
 Callem
 =========
 
