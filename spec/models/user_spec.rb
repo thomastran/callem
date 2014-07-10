@@ -22,8 +22,18 @@ describe User do
     let!(:thomas) do
       FactoryGirl.create(:contact, user: @user, name: 'Thomas Hooks')
     end
+
     it "should have the right contacts in A-Z order" do
       expect(@user.contacts.to_a).to eq [anna, david, thomas]
+    end
+
+    it "should destroy associated contacts" do
+      contacts = @user.contacts.to_a
+      @user.destroy
+      expect(contacts).not_to be_empty
+      contacts.each do |contact|
+        expect(Contact.where(id: contact.id)).to be_empty
+      end
     end
 
   end

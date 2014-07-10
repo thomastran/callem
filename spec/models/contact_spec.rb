@@ -28,6 +28,11 @@ RSpec.describe Contact, :type => :model do
     it { should_not be_valid }
   end
 
+  describe "when name is too long" do
+    before { @contact.name = "a" * 31}
+    it { should_not be_valid }
+  end
+
   describe "when email is not email-format" do
     before { @contact.email = "1234664"}
     it { should_not be_valid }
@@ -40,15 +45,6 @@ RSpec.describe Contact, :type => :model do
 
   describe "should have a factory" do
     it { expect(FactoryGirl.build(:contact)).to be_valid}
-  end
-
-  it "should destroy associated microposts" do
-    microposts = @user.microposts.to_a
-    @user.destroy
-    expect(microposts).not_to be_empty
-    microposts.each do |micropost|
-      expect(Micropost.where(id: micropost.id)).to be_empty
-    end
   end
 
 end
