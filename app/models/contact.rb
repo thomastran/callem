@@ -6,7 +6,7 @@ class Contact < ActiveRecord::Base
   validates :name, :presence => true,  :length => { :maximum => 30}
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :allow_blank => true
 
-  phony_normalize :phone, :default_country_code => 'US'
-  validates :phone, :phony_plausible => true
+  validates_format_of :phone, :with => /\A[-+]?[0-9]+\z/, :allow_blank => true
+  validates :phone, :length => { :maximum => 15}
 
 end

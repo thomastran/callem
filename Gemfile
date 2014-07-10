@@ -17,7 +17,6 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'phony_rails'
 
 group :development do
   gem 'better_errors'
@@ -40,6 +39,9 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'pry-debugger'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'

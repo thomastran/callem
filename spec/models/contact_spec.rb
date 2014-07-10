@@ -4,7 +4,7 @@ RSpec.describe Contact, :type => :model do
 
   before do
     @user = FactoryGirl.create(:user)
-    @contact = Contact.new(:name => "name", :phone => "18889086171", :email => "abc@example.com", :user_id => @user.id)
+    @contact = Contact.new(:name => "name", :phone => "0902585979", :email => "abc@example.com", :user_id => @user.id)
   end
 
   subject { @contact }
@@ -43,8 +43,19 @@ RSpec.describe Contact, :type => :model do
     it { should be_valid }
   end
 
+  describe "when email is blank" do
+    before { @contact.email = ""}
+    it { should be_valid }
+  end
+
+
   describe "when phone is not phone-format" do
     before { @contact.phone = "1212ab233"}
+    it { should_not be_valid }
+  end
+
+  describe "when phone is too long" do
+    before { @contact.phone = "1" * 16}
     it { should_not be_valid }
   end
 
