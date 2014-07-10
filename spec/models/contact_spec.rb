@@ -38,6 +38,11 @@ RSpec.describe Contact, :type => :model do
     it { should_not be_valid }
   end
 
+  describe "when email is nil" do
+    before { @contact.email = nil}
+    it { should be_valid }
+  end
+
   describe "when phone is not phone-format" do
     before { @contact.phone = "1212ab233"}
     it { should_not be_valid }
