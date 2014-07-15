@@ -1,14 +1,18 @@
 h1 Listing contacts
 
-table
+= link_to 'New Contact', new_contact_path, :class => "btn btn-large btn-primary"
+
+br
+br
+
+table.table.table-bordered
   thead
     tr
       th Name
       th Phone
       th Email
-      th
-      th
-      th
+      th[colspan="2"]
+
 
   tbody
     - @contacts.each do |contact|
@@ -16,10 +20,8 @@ table
         td = contact.name
         td = contact.phone
         td = contact.email
-        td = link_to 'Show', contact
-        td = link_to 'Edit', edit_contact_path(contact)
+        td = link_to raw('<i class="icon-star"></i> Edit'), edit_contact_path(contact)
         td = link_to 'Destroy', contact, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Contact', new_contact_path
