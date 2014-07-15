@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :contacts
 
-  root to: 'visitors#index'
+  root to: 'contacts#index'
   devise_for :users
   resources :users
 end
