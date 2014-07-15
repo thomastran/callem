@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "Contact index page" do
   let(:user) { FactoryGirl.create(:user) }
   let!(:c1) { FactoryGirl.create(:contact, :user => user, :name => "Foo", :phone => "0902445566" ) }
-  let!(:c2) { FactoryGirl.create(:contact, user: user, :name => "Bar", :phone => "0905112233") }
+  let!(:c2) { FactoryGirl.create(:contact, :user => user, :name => "Bar", :phone => "0905112233") }
 
   describe "for non-signed-in users" do
     before { get contacts_path }
@@ -24,6 +24,5 @@ describe "Contact index page" do
     it {expect(page).to have_content c2.email}
 
   end
-
 
 end
