@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/ThomasTran/callem.png)](https://api.travis-ci.org/ThomasTran/callem.png) [![Coverage Status](https://coveralls.io/repos/ThomasTran/callem/badge.png?branch=master)](https://coveralls.io/r/ThomasTran/callem?branch=master)
+[![Build Status](https://api.travis-ci.org/ThomasTran/callem.png)](https://api.travis-ci.org/ThomasTran/callem.png) [![Coverage Status](https://coveralls.io/repos/ThomasTran/callem/badge.png?branch=master)](https://coveralls.io/r/ThomasTran/callem?branch=master) [![Code Climate](https://codeclimate.com/github/ThomasTran/callem.png)](https://codeclimate.com/github/ThomasTran/callem)
 
 
 Callem
