@@ -20,4 +20,6 @@ end
 
 RSpec.configure do |config|
   config.include Features::SessionHelpers, :type => :request
+  config.include Features::SessionHelpers, type: :feature
+
 end
