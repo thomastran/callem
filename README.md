@@ -1,4 +1,5 @@
-[![Build Status](https://api.travis-ci.org/ThomasTran/callem.png)](https://api.travis-ci.org/ThomasTran/callem.png)
+[![Build Status](https://api.travis-ci.org/ThomasTran/callem.png)](https://api.travis-ci.org/ThomasTran/callem.png) [![Coverage Status](https://coveralls.io/repos/ThomasTran/callem/badge.png?branch=master)](https://coveralls.io/r/ThomasTran/callem?branch=master)
+
 
 Callem
 =========
