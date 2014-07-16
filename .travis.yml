@@ -4,9 +4,8 @@ rvm:
   - 2.1.1
 env:
   - DB=postgresql
-  - CODECLIMATE_TOKEN=c7ce42f6b4b7891d9de6201191fd4b160c32736d1c4a78b643cca74a4fdb76b5
 script:
-  - RAILS_ENV=test CODECLIMATE_REPO_TOKEN=$CODECLIMATE_TOKEN bundle exec rake --trace db:migrate spec
+  - RAILS_ENV=test CODECLIMATE_REPO_TOKEN=c7ce42f6b4b7891d9de6201191fd4b160c32736d1c4a78b643cca74a4fdb76b5 bundle exec rake --trace db:migrate spec
 before_script:
   - psql -c 'create database callem_test' -U postgres
 
