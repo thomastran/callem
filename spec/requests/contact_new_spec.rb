@@ -26,13 +26,14 @@ describe "Contact new page" do
           click_button "Create Contact"
         end
         it { expect(page).to have_content('Please review the problems below') }
+
       end
     end
 
     describe "with valid information" do
       before do
-        fill_in 'Name', :with => "David Kama"
-        fill_in 'Phone', :with => "0955332311"
+        fill_in 'contact_name', :with => "David Kama"
+        fill_in 'contact_phone', :with => "0955332311"
       end
 
       it "should create a contact" do
