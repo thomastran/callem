@@ -79,3 +79,7 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+
+.alert-error{
+  @extend .alert-danger;
+}
