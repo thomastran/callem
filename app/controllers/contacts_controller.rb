@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
 
   # GET /contacts
@@ -67,7 +67,16 @@ class ContactsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_contact
-      @contact = Contact.find(params[:id])
+      @contact = Contact.find_by_id(params[:id])
+
+      raise ActionController::RoutingError.new('Not Found') unless @contact
+
+      if not @contact
+        render(:file => File.join(Rails.root, 'public/404.html'), :status => 404, :layout => false)
+      elsif @contact.user != current_user
+        render(:file => File.join(Rails.root, 'public/403.html'), :status => 403, :layout => false)
+      end
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
