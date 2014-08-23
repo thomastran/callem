@@ -17,6 +17,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'simple_form'
 gem 'slim-rails'
+gem 'exception_handler'
 
 group :development do
   gem 'better_errors'
@@ -36,6 +37,7 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
@@ -46,9 +48,11 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
 end
+
 group :production do
   gem 'puma'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

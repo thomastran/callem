@@ -99,6 +99,7 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
+    exception_handler (0.3.45)
     execjs (2.2.1)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -323,6 +324,7 @@ DEPENDENCIES
   database_cleaner
   devise
   devise-i18n
+  exception_handler
   factory_girl_rails
   faker
   figaro (>= 1.0.0.rc1)
