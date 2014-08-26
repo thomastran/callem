@@ -50,7 +50,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'puma'
+  gem 'unicorn'
 end
 
 group :test do
@@ -62,3 +62,6 @@ end
 
 gem 'coveralls', require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
+
+# heroku gem
+gem 'rails_12factor', group: :production
