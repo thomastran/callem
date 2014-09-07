@@ -12,6 +12,7 @@ RSpec.describe Contact, :type => :model do
   it { should respond_to(:phone) }
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:last_called) }
 
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
@@ -47,7 +48,6 @@ RSpec.describe Contact, :type => :model do
     before { @contact.email = ""}
     it { should be_valid }
   end
-
 
   describe "when phone is not phone-format" do
     before { @contact.phone = "1212ab233"}
