@@ -10,6 +10,6 @@ class Contact < ActiveRecord::Base
   validates_format_of :phone, :with => /\A[-+]?[0-9]+\z/, :allow_blank => true
   validates :phone, :length => { :maximum => 15}
 
-  validates :last_called, :length => { :maximum => 15}
+  #validates :last_called, :length => { :maximum => 15}
 
 end

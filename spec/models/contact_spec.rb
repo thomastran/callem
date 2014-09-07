@@ -59,6 +59,8 @@ RSpec.describe Contact, :type => :model do
     it { should_not be_valid }
   end
 
+  it "last_called validation"
+
   describe "should have a factory" do
     it { expect(FactoryGirl.build(:contact)).to be_valid}
   end

@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe "Contact index page" do
   let(:user) { FactoryGirl.create(:user) }
-  let!(:c1) { FactoryGirl.create(:contact, :user => user, :name => "Foo", :phone => "0902445566" ) }
+  let!(:c1) { FactoryGirl.create(:contact, :user => user, :name => "Foo", :phone => "0902445566",
+                                 :last_called => DateTime.now ) }
   let!(:c2) { FactoryGirl.create(:contact, :user => user, :name => "Bar", :phone => "0905112233") }
 
   describe "for non-signed-in users" do
@@ -18,6 +19,7 @@ describe "Contact index page" do
 
     it {expect(page).to have_content c1.name}
     it {expect(page).to have_content c1.phone}
+    it {expect(page).to have_content c1.last_called }
 
     it {expect(page).to have_content c2.name}
     it {expect(page).to have_content c2.phone}

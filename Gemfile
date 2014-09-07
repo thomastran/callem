@@ -60,6 +60,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+# code coverage
 gem 'coveralls', require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
 

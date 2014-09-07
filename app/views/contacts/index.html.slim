@@ -11,6 +11,7 @@ table.table.table-bordered
       th Name
       th Phone
       th Email
+      th Last Called
       th[colspan="2"]
 
 
@@ -20,6 +21,7 @@ table.table.table-bordered
         td = contact.name
         td = contact.phone
         td = contact.email
+        td = contact.last_called
         td = link_to raw('<i class="icon-star"></i> Edit'), edit_contact_path(contact)
         td = link_to 'Destroy', contact, data: {:confirm => 'Are you sure?'}, :method => :delete
 
