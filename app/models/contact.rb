@@ -12,4 +12,17 @@ class Contact < ActiveRecord::Base
 
   #validates :last_called, :length => { :maximum => 15}
 
+
+  # call the contact, update last_called
+  def call
+    self.last_called = DateTime.now
+  end
+
+  # call the contact, update last_called
+  def call!
+    self.call
+    self.save
+  end
+
+
 end

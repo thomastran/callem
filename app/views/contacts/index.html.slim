@@ -5,15 +5,14 @@ h1 Listing contacts
 br
 br
 
-table.table.table-bordered
+table#contacts.table.table-bordered
   thead
     tr
       th Name
       th Phone
       th Email
       th Last Called
-      th[colspan="2"]
-
+      th
 
   tbody
     - @contacts.each do |contact|
@@ -21,9 +20,19 @@ table.table.table-bordered
         td = contact.name
         td = contact.phone
         td = contact.email
-        td = contact.last_called
-        td = link_to raw('<i class="icon-star"></i> Edit'), edit_contact_path(contact)
-        td = link_to 'Destroy', contact, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td
+          = contact.last_called.to_formatted_s(:long) if  contact.last_called
+          = link_to call_contact_path(contact), :method => :post, :class => "call"
+            button.btn.btn-success.btn-xs
+              | Call
+
+        td
+          = link_to edit_contact_path(contact)
+            button.btn.btn-default.btn-xs
+              span.glyphicon.glyphicon-pencil
+          = link_to contact, data: {:confirm => 'Are you sure?'}, :method => :delete
+            button.btn.btn-default.btn-xs
+              span.glyphicon.glyphicon-trash
 
 br
 

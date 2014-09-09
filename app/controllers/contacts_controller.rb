@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_contact, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_contact, only: [:show, :edit, :update, :destroy, :call]
 
   # GET /contacts
   # GET /contacts.json
@@ -61,6 +60,23 @@ class ContactsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  # POST /contacts/1/call
+  # POST /contacts/1/call.json
+  def call
+    puts "!!!!!!!!!!!!!!!!"
+
+    respond_to do |format|
+      @contact.call
+      if @contact.save
+        format.html { redirect_to contacts_path, notice: 'Contact was successfully called.' }
+        format.json { render :show, status: :ok, location: @contact }
+      else
+        format.html { render :edit }
+        format.json { render json: @contact.errors, status: :unprocessable_entity }
+      end
     end
   end
 
